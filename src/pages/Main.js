@@ -1,23 +1,18 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import Header from '../components/Header';
+import { useGetProducts } from '../hooks/useGetProducts';
+import ProductsTable from '../components/Table/ProductsTable';
 
 const Main = () => {
-  const navigate = useNavigate();
+  const { isLoading } = useGetProducts();
 
-  const handleLogin = () => {
-    // Implement login functionality here
-  };
-
-  const handleLogout = () => {
-    // Implement logout functionality here
-  };
+  if (isLoading) {
+    return <span>Loading...</span>;
+  }
 
   return (
     <div>
-      <Button onClick={() => navigate('/')}>Home</Button>
-      <Button onClick={handleLogin}>Login</Button>
-      <Button onClick={handleLogout}>Logout</Button>
+      <Header />
+      <ProductsTable />
     </div>
   );
 };

@@ -5,8 +5,8 @@ import Login from './pages/Login';
 import Main from './pages/Main';
 import ProductCard from './pages/ProductCard';
 import { Container } from '@mui/material';
-import './index.css';
 import { AuthProvider } from './contecsts';
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <Login />
   },
   { path: '/', element: <Main /> },
-  { path: 'products/:productsId', element: <ProductCard /> }
+  { path: 'products/:productId', element: <ProductCard /> }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
