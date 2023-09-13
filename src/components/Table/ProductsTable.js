@@ -9,14 +9,13 @@ import {
   TableHead,
   TableRow
 } from '@mui/material';
-
-import { useGetProducts } from '../../hooks/useGetProducts';
+import { Link } from 'react-router-dom';
+import { useGetProducts } from '../../hooks/dataFetchHooks';
 
 import './ProductsTable.less';
-import { Link } from 'react-router-dom';
 
 const ProductsTable = () => {
-  const { products } = useGetProducts();
+  const { data } = useGetProducts();
   const [page, setPage] = useState(1);
 
   const handleChange = (event, value) => {
@@ -24,8 +23,8 @@ const ProductsTable = () => {
   };
 
   const productsPerPage = 5;
-  const totalPages = Math.ceil(products.length / productsPerPage);
-  const productsToShow = products.slice(
+  const totalPages = Math.ceil(data.length / productsPerPage);
+  const productsToShow = data.slice(
     (page - 1) * productsPerPage,
     page * productsPerPage
   );

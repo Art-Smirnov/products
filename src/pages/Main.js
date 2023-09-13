@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import { useGetProducts } from '../hooks/useGetProducts';
+import { useGetProducts } from '../hooks/dataFetchHooks';
 import ProductsTable from '../components/Table/ProductsTable';
 
 const Main = () => {

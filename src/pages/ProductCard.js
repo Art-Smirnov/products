@@ -1,12 +1,12 @@
 import Header from '../components/Header';
 import { useEffect } from 'react';
 import { useAuth } from '../contecsts';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Product from '../components/Product';
 
 const ProductCard = () => {
   const { user } = useAuth();
-  const { productId } = useParams();
-  console.log(productId);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,6 +18,7 @@ const ProductCard = () => {
   return (
     <div>
       <Header />
+      <Product />
     </div>
   );
 };
