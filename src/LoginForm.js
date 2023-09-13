@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, TextField } from '@mui/material';
+import { useAuth } from './contecsts';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const { setLogin, user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [navigate, user]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const { login, password } = event.target.elements;
-    console.log({ login, password });
+    setLogin({ login: login.value, password: password.value });
   };
 
   return (
