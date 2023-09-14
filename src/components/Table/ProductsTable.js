@@ -10,12 +10,13 @@ const ProductsTable = () => {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('');
 
-  const handleChange = (event, value) => {
+  const handlePageChange = (event, value) => {
     setPage(value);
   };
 
   const handleFilterChange = useCallback((event) => {
     setFilter(event.target.value);
+    setPage(1);
   }, []);
 
   const filteredData = useMemo(() => {
@@ -52,7 +53,7 @@ const ProductsTable = () => {
             <Pagination
               count={totalPages}
               page={page}
-              onChange={handleChange}
+              onChange={handlePageChange}
               showFirstButton
               showLastButton
             />
