@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGetProduct } from '../../hooks/dataFetchHooks';
 import { useParams } from 'react-router-dom';
-import { Rating } from '@mui/material';
+import { CircularProgress, Rating } from '@mui/material';
 import './Product.less';
 
 const Product = () => {
@@ -9,7 +9,7 @@ const Product = () => {
   const { data, isLoading } = useGetProduct(productId);
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <CircularProgress className="spinner" />;
   }
 
   return (

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useGetProducts } from '../../hooks/dataFetchHooks';
 import InputFilter from '../InputFilter/InputFilter';
-
-import './ProductsTable.less';
-import { Pagination } from '@mui/material';
+import { CircularProgress, Pagination } from '@mui/material';
 import Table from './Table';
+import './ProductsTable.less';
 
 const ProductsTable = () => {
-  const { data } = useGetProducts();
+  const { data, isLoading } = useGetProducts();
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('');
 
@@ -30,11 +29,17 @@ const ProductsTable = () => {
     page * productsPerPage
   );
 
+  if (isLoading) {
+    return <CircularProgress className="spinner" />;
+  }
+
+  const showNotFound = productsToShow.length === 0;
+
   return (
     <div className="products-table">
       <InputFilter value={filter} onChange={handleFilterChange} />
       <div className="products-table-container">
-        {productsToShow.length === 0 ? (
+        {showNotFound ? (
           <h2 className="not-found-msg">Not found :(</h2>
         ) : (
           <>

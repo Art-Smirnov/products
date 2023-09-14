@@ -3,10 +3,9 @@ import { getProducts } from '../api/products';
 
 const useFetchData = (id) => {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     getProducts(id).then((res) => {
       setData(res);
       setIsLoading(false);
