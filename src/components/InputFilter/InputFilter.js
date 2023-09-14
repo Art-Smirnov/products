@@ -1,7 +1,6 @@
 import React from 'react';
-import { TextField } from '@mui/material';
+import { styled, TextField } from '@mui/material';
 import PropTypes from 'prop-types';
-import { styled } from '@mui/system';
 
 const StyledTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
