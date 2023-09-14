@@ -1,8 +1,10 @@
 {
+  "homepage": "https://art-smirnov.github.io/products",
   "name": "products",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.8",
@@ -20,6 +22,8 @@
   },
   "scripts": {
     "start": "craco start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
