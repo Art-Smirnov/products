@@ -14,8 +14,10 @@ const Product = () => {
 
   return (
     <div className="product">
-      <img className="product-image" alt={data.title} src={data.image} />
-      <div>
+      <div className="product-image">
+        <img alt={data.title} src={data.image} />
+      </div>
+      <div className="product-info">
         <h1>{data.title}</h1>
         <span className="product-price">${data.price}</span>
         <Rating defaultValue={data.rating?.rate} precision={0.5} readOnly />

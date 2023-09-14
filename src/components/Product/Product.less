@@ -1,9 +1,18 @@
 @import "../../less/variables";
 
 .product {
-  margin-top: 86px;
   display: flex;
   gap: 24px;
+  flex-direction: column;
+  padding-top: 26px;
+  padding-bottom: 24px;
+  align-items: center;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    padding-top: 86px;
+    align-items: normal;
+  }
 }
 
 .product-price {
@@ -14,8 +23,16 @@
 }
 
 .product-image {
-  width: 100%;
   max-width: 400px;
+
+  & img {
+    max-width: 100%;
+  }
+}
+
+.product-info {
+  width: 100%;
+  min-width: 110px;
 }
 
 .product-category {
