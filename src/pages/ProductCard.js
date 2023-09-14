@@ -1,8 +1,9 @@
-import Header from '../components/Header';
 import { useEffect } from 'react';
 import { useAuth } from '../contecsts';
 import { useNavigate } from 'react-router-dom';
 import Product from '../components/Product';
+import Header from '../components/Header/Header';
+import { Container } from '@mui/material';
 
 const ProductCard = () => {
   const { user } = useAuth();
@@ -18,7 +19,9 @@ const ProductCard = () => {
   return (
     <div>
       <Header />
-      <Product />
+      <Container>
+        <Product />
+      </Container>
     </div>
   );
 };

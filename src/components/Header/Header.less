@@ -1,0 +1,46 @@
+@import "../../less/variables";
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: @color-primary;
+  height: 56px;
+
+  .MuiButton-root {
+    color: @color-white;
+    border-color: @color-white;
+
+    &:hover {
+      border-color: @color-secondary;
+      color: @color-secondary;
+    }
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header-logo {
+  color: white;
+  font-weight: 500;
+}
+
+.header-link {
+  margin-right: 10px;
+  color: @color-white;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color @transition, border-bottom @transition;
+
+  &:hover {
+    color: @color-secondary;
+    border-bottom: 1px solid @color-secondary;
+  }
+}
+
+
+

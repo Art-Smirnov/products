@@ -1,6 +1,7 @@
-import Header from '../components/Header';
 import { useGetProducts } from '../hooks/dataFetchHooks';
 import ProductsTable from '../components/Table/ProductsTable';
+import Header from '../components/Header/Header';
+import { Container } from '@mui/material';
 
 const Main = () => {
   const { isLoading } = useGetProducts();
@@ -12,7 +13,9 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <ProductsTable />
+      <Container>
+        <ProductsTable />
+      </Container>
     </div>
   );
 };
