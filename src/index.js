@@ -9,11 +9,11 @@ import { AuthProvider } from './contecsts';
 import './index.less';
 
 const router = createHashRouter([
+  { path: '/', element: <Main /> },
   {
     path: 'login',
     element: <Login />
   },
-  { path: '/', element: <Main /> },
   { path: 'products/:productId', element: <ProductCard /> }
 ]);
 
