@@ -34,26 +34,29 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-      <TextField
-        id="login"
-        label="Login"
-        variant="outlined"
-        error={errors.login}
-        helperText={errors.login && 'Please enter login'}
-      />
-      <TextField
-        id="password"
-        label="Password"
-        variant="outlined"
-        type="password"
-        error={errors.password}
-        helperText={errors.password && 'Please enter password'}
-      />
-      <Button variant="outlined" type="submit">
-        Login
-      </Button>
-    </form>
+    <div className="login-form-container">
+      <h1>Login</h1>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <TextField
+          id="login"
+          label="Login"
+          variant="outlined"
+          error={errors.login}
+          helperText={errors.login && 'Please enter login'}
+        />
+        <TextField
+          id="password"
+          label="Password"
+          variant="outlined"
+          type="password"
+          error={errors.password}
+          helperText={errors.password && 'Please enter password'}
+        />
+        <Button variant="outlined" type="submit">
+          Login
+        </Button>
+      </form>
+    </div>
   );
 };
 
