@@ -1,6 +1,6 @@
 import { useGetProducts } from '../hooks/dataFetchHooks';
 import ProductsTable from '../components/Table/ProductsTable';
-import Header from '../components/Header/Header';
+import Header from '../components/Header';
 import { Container } from '@mui/material';
 
 const Main = () => {

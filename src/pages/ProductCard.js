@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useAuth } from '../contecsts';
 import { useNavigate } from 'react-router-dom';
 import Product from '../components/Product';
-import Header from '../components/Header/Header';
+import Header from '../components/Header';
 import { Container } from '@mui/material';
 
 const ProductCard = () => {
