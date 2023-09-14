@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { Button, TextField } from '@mui/material';
-import { useAuth } from './contecsts';
+import { useAuth } from '../../contecsts';
 import { useNavigate } from 'react-router-dom';
+import './LoginForm.less';
 
 const LoginForm = () => {
   const { setLogin, user } = useAuth();
   const navigate = useNavigate();
-
+  console.log(user);
   useEffect(() => {
     if (user) {
       navigate('/');
@@ -20,7 +21,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
       <TextField id="login" label="Login" variant="outlined" />
       <TextField
         id="password"
@@ -28,7 +29,7 @@ const LoginForm = () => {
         variant="outlined"
         type="password"
       />
-      <Button type="submit" variant="contained">
+      <Button variant="outlined" type="submit">
         Login
       </Button>
     </form>
