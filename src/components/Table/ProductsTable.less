@@ -1,13 +1,73 @@
+@import "../../less/variables";
+
 .table {
-  margin-top: 100px;
+  margin-top: 96px;
+  border: 1px solid @color-secondary;
+  border-radius: 10px;
+  padding-bottom: 14px;
+  overflow: hidden;
+}
+
+.table-head-row {
+  background-color: @color-primary;
+
+  & span {
+    color: @color-white;
+  }
+}
+
+.table-body {
+  height: 452px;
 }
 
 .table-image {
-  height: 50px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .table-pagination {
-  margin-top: 32px;
+  margin-top: 14px;
   margin-left: auto;
+  margin-right: auto;
   width: fit-content;
 }
+
+.table-head span {
+  font-weight: 600;
+}
+
+.table-name-cell {
+  max-width: 100px;
+
+
+
+  & a {
+    color: black;
+    font-weight: 600;
+    transition: color @transition;
+
+    &:hover {
+      color: @color-primary;
+    }
+
+  }
+}
+
+.table-id-cell {
+  width: 36px;
+}
+
+.table-price-cell{
+  max-width: 36px;
+}
+
+.table-price-cell{
+  max-width: 36px;
+}
+
+.table-image-cell{
+  width: 52px;
+  height: 52px;
+}
+
+

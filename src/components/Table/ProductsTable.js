@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   Pagination,
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -31,29 +30,37 @@ const ProductsTable = () => {
 
   return (
     <div className="table">
-      <TableContainer component={Paper}>
+      <TableContainer>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Price</TableCell>
-              <TableCell>Image</TableCell>
+          <TableHead className="table-head">
+            <TableRow className="table-head-row">
+              <TableCell>
+                <span>ID</span>
+              </TableCell>
+              <TableCell align="left">
+                <span>Name</span>
+              </TableCell>
+              <TableCell align="center">
+                <span>Price</span>
+              </TableCell>
+              <TableCell align="center">
+                <span>Image</span>
+              </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody className="table-body">
             {productsToShow.map((row) => (
-              <TableRow
-                key={row.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                <TableCell component="th" scope="row">
+              <TableRow key={row.id}>
+                <TableCell className="table-id-cell" component="th" scope="row">
                   {row.id}
                 </TableCell>
-                <TableCell>
+                <TableCell align="left" className="table-name-cell">
                   <Link to={`/products/${row.id}`}>{row.title}</Link>
                 </TableCell>
-                <TableCell>{row.price}</TableCell>
-                <TableCell>
+                <TableCell align="center" className="table-price-cell">
+                  ${row.price}
+                </TableCell>
+                <TableCell align="center" className="table-image-cell">
                   <img
                     className="table-image"
                     src={row.image}
