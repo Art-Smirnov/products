@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   TableBody,
   TableCell,
@@ -67,4 +67,4 @@ Table.propTypes = {
   ).isRequired
 };
 
-export default Table;
+export default memo(Table);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
 import { useGetProducts } from '../../hooks/dataFetchHooks';
 import InputFilter from '../InputFilter/InputFilter';
 import { CircularProgress, Pagination } from '@mui/material';
@@ -14,20 +14,25 @@ const ProductsTable = () => {
     setPage(value);
   };
 
-  const handleFilterChange = (event) => {
+  const handleFilterChange = useCallback((event) => {
     setFilter(event.target.value);
-  };
+  }, []);
 
-  const filteredData = data.filter((item) =>
-    item.title.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredData = useMemo(() => {
+    return data.filter((item) =>
+      item.title.toLowerCase().includes(filter.toLowerCase())
+    );
+  }, [data, filter]);
 
   const productsPerPage = 5;
   const totalPages = Math.ceil(filteredData.length / productsPerPage);
-  const productsToShow = filteredData.slice(
-    (page - 1) * productsPerPage,
-    page * productsPerPage
-  );
+
+  const productsToShow = useMemo(() => {
+    return filteredData.slice(
+      (page - 1) * productsPerPage,
+      page * productsPerPage
+    );
+  }, [filteredData, page, productsPerPage]);
 
   if (isLoading) {
     return <CircularProgress className="spinner" />;
@@ -58,4 +63,4 @@ const ProductsTable = () => {
   );
 };
 
-export default ProductsTable;
+export default memo(ProductsTable);

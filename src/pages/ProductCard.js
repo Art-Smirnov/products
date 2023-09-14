@@ -1,13 +1,12 @@
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useAuth } from '../contecsts';
 import { useNavigate } from 'react-router-dom';
 import Product from '../components/Product';
-import Header from '../components/Header';
 import { Container } from '@mui/material';
+import Header from '../components/Header';
 
 const ProductCard = () => {
   const { user } = useAuth();
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const ProductCard = () => {
 
   return (
     <div>
-      <Header />
+      <Header isProductCard />
       <Container>
         <Product />
       </Container>
@@ -26,4 +25,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);

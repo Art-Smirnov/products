@@ -1,6 +1,6 @@
-import React from 'react';
-import { styled, TextField } from '@mui/material';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import { styled, TextField } from '@mui/material';
 
 const StyledTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
@@ -25,4 +25,4 @@ InputFilter.propTypes = {
   onChange: PropTypes.func.isRequired
 };
 
-export default InputFilter;
+export default memo(InputFilter);

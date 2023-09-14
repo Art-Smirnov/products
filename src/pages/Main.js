@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import ProductsTable from '../components/Table/ProductsTable';
 import Header from '../components/Header';
 import { Container } from '@mui/material';
@@ -13,4 +14,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default memo(Main);

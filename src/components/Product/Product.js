@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useGetProduct } from '../../hooks/dataFetchHooks';
 import { useParams } from 'react-router-dom';
 import { CircularProgress, Rating } from '@mui/material';
@@ -29,4 +29,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default memo(Product);

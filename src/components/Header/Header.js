@@ -1,13 +1,13 @@
+import { memo } from 'react';
 import { Button, Container } from '@mui/material';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contecsts';
+import PropTypes from 'prop-types';
 import './Header.less';
 
-const Header = () => {
+const Header = ({ isProductCard }) => {
   const { setLogout, user } = useAuth();
-  const location = useLocation();
   const navigate = useNavigate();
-  const iProductCardPage = location.pathname.includes('products');
 
   const handleLogOut = () => {
     setLogout();
@@ -23,7 +23,7 @@ const Header = () => {
         <div className="header-content">
           <span className="header-logo">LOGO</span>
           <div>
-            {iProductCardPage && (
+            {isProductCard && (
               <Link className="header-link" to={'/'}>
                 Home
               </Link>
@@ -41,4 +41,8 @@ const Header = () => {
   );
 };
 
-export default Header;
+Header.propTypes = {
+  isProductCard: PropTypes.bool
+};
+
+export default memo(Header);
