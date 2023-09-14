@@ -8,8 +8,6 @@ const Product = () => {
   const { productId } = useParams();
   const { data, isLoading } = useGetProduct(productId);
 
-  console.log(data);
-
   if (isLoading) {
     return <span>Loading...</span>;
   }
