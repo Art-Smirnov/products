@@ -13,8 +13,8 @@ import PropTypes from 'prop-types';
 const Table = ({ products }) => {
   return (
     <TableContainer>
-      <MUITable sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead className="table-head">
+      <MUITable aria-label="simple table">
+        <TableHead>
           <TableRow className="table-head-row">
             <TableCell>
               <span>ID</span>
