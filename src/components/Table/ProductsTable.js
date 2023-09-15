@@ -51,6 +51,7 @@ const ProductsTable = () => {
           <>
             <Table products={productsToShow} />
             <Pagination
+              className="products-table-pagination"
               count={totalPages}
               page={page}
               onChange={handlePageChange}

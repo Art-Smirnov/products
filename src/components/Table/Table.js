@@ -39,13 +39,13 @@ const Table = ({ products }) => {
                 scope="row">
                 {row.id}
               </TableCell>
-              <TableCell align="left" className="table-cell table-name-cell">
+              <TableCell align="left" className="table-name-cell">
                 <Link to={`/products/${row.id}`}>{row.title}</Link>
               </TableCell>
-              <TableCell align="center" className="table-cell table-price-cell">
+              <TableCell align="center" className="table-price-cell">
                 ${row.price}
               </TableCell>
-              <TableCell align="center" className="table-cell table-image-cell">
+              <TableCell align="center" className="table-image-cell">
                 <img className="table-image" src={row.image} alt={row.title} />
               </TableCell>
             </TableRow>

@@ -19,9 +19,17 @@
   border-radius: 10px;
   padding-bottom: 14px;
   overflow: hidden;
-  height: 596px;
+
+  @media (min-width: 600px) {
+    height: 596px;
+  }
 }
 
+.products-table-pagination {
+  @media (max-width: 599px) {
+    margin-top: 14px;
+  }
+}
 
 .table-head-row {
   background-color: @color-primary;
@@ -52,16 +60,22 @@
     color: black;
     font-weight: 600;
     transition: color @transition;
+    font-size: 12px;
 
     &:hover {
       color: @color-primary;
     }
 
+    @media (min-width: 600px) {
+      font-size: unset;
+    }
   }
 }
 
 .table-id-cell {
-  width: 36px;
+  @media (min-width: 600px){
+    width: 36px;
+  }
 }
 
 .table-price-cell{
